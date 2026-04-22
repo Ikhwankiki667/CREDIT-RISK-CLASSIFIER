@@ -1,0 +1,10 @@
+# Mengabaikan folder cache Python (yang ada di dalam src)
+src/__pycache__/
+*.py[cod]
+
+# Mengabaikan folder dataset dan semua file CSV agar aman dari bot/hacker
+data/
+*.csv
+
+# Mengabaikan file environment yang biasanya berisi rahasia (jaga-jaga kalau nanti pakai)
+.env
