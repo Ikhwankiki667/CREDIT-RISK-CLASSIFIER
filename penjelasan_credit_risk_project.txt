@@ -1,0 +1,222 @@
+CREDIT RISK ANALYSIS SYSTEM Penjelasan Detail Proyek Aplikasi Penentu
+Risiko Pinjaman Bank
+
+1.  PENDAHULUAN
+
+Dalam dunia perbankan, salah satu aktivitas utama adalah memberikan
+pinjaman kepada nasabah. Namun setiap pinjaman memiliki risiko, yaitu
+kemungkinan nasabah tidak mampu membayar kembali pinjaman tersebut. Oleh
+karena itu bank membutuhkan sistem untuk menilai tingkat risiko dari
+setiap pengajuan pinjaman.
+
+Sistem ini disebut sebagai Credit Risk Analysis System atau Credit
+Scoring System.
+
+Tujuan dari sistem ini adalah: - Membantu bank menentukan apakah
+pinjaman sebaiknya disetujui atau ditolak - Mengukur tingkat risiko dari
+peminjam - Mengurangi kerugian bank akibat kredit macet
+
+Dalam proyek ini, aplikasi akan dibuat untuk melakukan analisis tersebut
+secara otomatis berdasarkan data peminjam.
+
+------------------------------------------------------------------------
+
+2.  KONSEP DASAR CREDIT RISK
+
+Credit risk adalah risiko bahwa peminjam tidak dapat membayar kembali
+pinjaman yang diberikan.
+
+Contoh kasus:
+
+Seseorang mengajukan pinjaman: Nama: Andi Pinjaman: 100 juta Tenor: 3
+tahun Penghasilan: 8 juta per bulan
+
+Bank harus menjawab pertanyaan berikut: Apakah orang ini kemungkinan
+besar bisa membayar kembali pinjaman?
+
+Jika kemungkinan gagal bayar tinggi, maka bank akan menolak pinjaman
+tersebut.
+
+------------------------------------------------------------------------
+
+3.  ALUR SISTEM APLIKASI
+
+Secara umum sistem akan berjalan dalam beberapa tahap:
+
+INPUT DATA ↓ PROSES ANALISIS RISIKO ↓ PERHITUNGAN METRIK RISIKO ↓ OUTPUT
+KEPUTUSAN
+
+Tahapan ini dijelaskan lebih detail berikut.
+
+------------------------------------------------------------------------
+
+4.  INPUT DATA PEMINJAM
+
+Pada tahap pertama, pegawai bank atau user akan memasukkan data peminjam
+ke dalam sistem.
+
+Contoh data yang dimasukkan:
+
+-   Nama peminjam
+-   Umur
+-   Pekerjaan
+-   Penghasilan per bulan
+-   Jumlah pinjaman
+-   Lama pinjaman (tenor)
+-   Riwayat kredit
+-   Status pernikahan
+-   Jumlah tanggungan
+-   Nilai jaminan
+
+Contoh tabel data:
+
+Nama: Andi Umur: 30 Pekerjaan: Karyawan Penghasilan: 8.000.000 Pinjaman:
+100.000.000 Tenor: 36 bulan Jaminan: Motor
+
+Data ini akan digunakan oleh sistem untuk menghitung risiko.
+
+------------------------------------------------------------------------
+
+5.  PROSES ANALISIS RISIKO
+
+Setelah data dimasukkan, sistem akan menganalisis risiko menggunakan
+model statistik atau machine learning.
+
+Model akan mempelajari pola dari data historis seperti:
+
+-   siapa yang berhasil melunasi pinjaman
+-   siapa yang gagal bayar
+
+Dari pola tersebut sistem bisa memprediksi kemungkinan gagal bayar untuk
+peminjam baru.
+
+------------------------------------------------------------------------
+
+6.  METRIK RISIKO DALAM SISTEM
+
+Ada beberapa komponen penting dalam analisis risiko kredit.
+
+1.  Probability of Default (PD)
+
+Probability of Default adalah kemungkinan bahwa peminjam gagal membayar
+pinjaman.
+
+Contoh: PD = 6.8%
+
+Artinya ada kemungkinan 6.8% bahwa peminjam tidak dapat membayar
+pinjaman.
+
+------------------------------------------------------------------------
+
+2.  Loss Given Default (LGD)
+
+LGD adalah persentase kerugian yang akan dialami bank jika peminjam
+gagal bayar.
+
+Contoh: LGD = 40%
+
+Artinya jika terjadi gagal bayar, bank berpotensi kehilangan 40% dari
+pinjaman.
+
+------------------------------------------------------------------------
+
+3.  Exposure at Default (EAD)
+
+EAD adalah jumlah uang yang sedang dipinjam oleh nasabah pada saat gagal
+bayar.
+
+Contoh: EAD = 100 juta
+
+------------------------------------------------------------------------
+
+4.  Expected Loss
+
+Expected Loss adalah estimasi kerugian yang mungkin dialami bank.
+
+Rumus:
+
+Expected Loss = PD × LGD × EAD
+
+Contoh perhitungan:
+
+PD = 6.8% LGD = 40% EAD = 100.000.000
+
+Expected Loss = 0.068 × 0.40 × 100.000.000
+
+Expected Loss = 2.720.000
+
+Artinya bank diprediksi mengalami kerugian sekitar 2.72 juta.
+
+------------------------------------------------------------------------
+
+7.  PENILAIAN TINGKAT RISIKO
+
+Berdasarkan hasil analisis, sistem akan memberikan kategori risiko.
+
+Contoh kategori:
+
+Low Risk Medium Risk High Risk
+
+Atau menggunakan grading:
+
+A = sangat aman B = cukup aman C = berisiko D = sangat berisiko
+
+------------------------------------------------------------------------
+
+8.  KEPUTUSAN PINJAMAN
+
+Setelah risiko dihitung, sistem akan memberikan rekomendasi kepada bank.
+
+Contoh keputusan:
+
+APPROVE Pinjaman disetujui.
+
+REJECT Pinjaman ditolak karena risiko terlalu tinggi.
+
+CONDITIONAL APPROVAL Pinjaman disetujui dengan syarat tertentu,
+misalnya: - harus ada jaminan tambahan - jumlah pinjaman dikurangi
+
+------------------------------------------------------------------------
+
+9.  DASHBOARD OUTPUT APLIKASI
+
+Aplikasi biasanya menampilkan hasil dalam bentuk dashboard.
+
+Contoh tampilan:
+
+Applicant Name: Andi Loan Amount: 100.000.000 Tenor: 36 bulan
+
+Probability of Default: 6.8% Risk Grade: B Expected Loss: 2.720.000
+
+Decision: CONDITIONAL APPROVAL
+
+------------------------------------------------------------------------
+
+10. TEKNOLOGI YANG DAPAT DIGUNAKAN
+
+Untuk membuat sistem ini biasanya digunakan teknologi berikut.
+
+Backend: Python
+
+Library: pandas numpy scikit-learn
+
+Machine Learning Model: Logistic Regression Random Forest Gradient
+Boosting
+
+Frontend: Streamlit Flask React
+
+Database: MySQL PostgreSQL
+
+------------------------------------------------------------------------
+
+11. KESIMPULAN
+
+Credit Risk Analysis System adalah aplikasi yang membantu bank menilai
+risiko pinjaman secara otomatis.
+
+Dengan menggunakan data peminjam dan model analisis, sistem dapat
+menghitung kemungkinan gagal bayar dan memberikan rekomendasi apakah
+pinjaman sebaiknya disetujui atau ditolak.
+
+Sistem ini membantu bank untuk: - Mengurangi risiko kredit macet -
+Membuat keputusan lebih cepat - Membuat analisis yang lebih objektif
